@@ -1,6 +1,14 @@
 [build]
   publish = "."
 
+# Proxy API calls through Netlify (HTTPS to HTTP)
+[[redirects]]
+  from = "/api/*"
+  to = "http://api.nimbrax.com/:splat"
+  status = 200
+  force = true
+
+# Your existing redirects
 [[redirects]]
   from = "/account/*"
   to = "/account/index.html"
