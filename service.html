@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Brineex - Secure Investment Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+        @media (max-width: 576px) {
+            .navbar-brand {
+                margin-top: -30px !important;
+            }
+
+            .navbar-brand img {
+                height: 150px !important;
+            }
+        }
+
+
+        @media (max-width: 576px) {
+            .navbar-toggler {
+                margin-top: -25px !important;
+                /* Move it down slightly */
+                margin-right: 10px !important;
+                /* Add right margin if needed */
+                padding: 4px 6px !important;
+                /* Make it a bit smaller */
+                font-size: 1rem;
+                /* Adjust icon size */
+            }
+
+            .navbar-toggler .toggler-icon {
+                background-color: #000;
+                /* Optional: darker lines for visibility */
+                height: 2px;
+                width: 20px;
+                margin: 4px 0;
+                display: block;
+            }
+        }
+
+        /* ------------------------------------------------------ */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                margin-top: -30px !important;
+            }
+
+            .navbar-brand img {
+                height: 150px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                margin-top: -25px !important;
+                /* Move it down slightly */
+                margin-right: 10px !important;
+                /* Add right margin if needed */
+                padding: 4px 6px !important;
+                /* Make it a bit smaller */
+                font-size: 1rem;
+                /* Adjust icon size */
+            }
+
+            .navbar-toggler .toggler-icon {
+                background-color: #000;
+                /* Optional: darker lines for visibility */
+                height: 2px;
+                width: 20px;
+                margin: 4px 0;
+                display: block;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .sub-menu-bar {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+            }
+
+            .navbar-nav {
+                flex-wrap: nowrap;
+                display: flex;
+                gap: 1rem;
+                /* spacing between items */
+            }
+
+            .navbar-nav .nav-item {
+                flex: 0 0 auto;
+                /* prevent shrinking */
+            }
+
+            .navbar-nav .nav-item a {
+                white-space: nowrap;
+                /* prevent text wrapping */
+                padding: 10px 15px;
+            }
+
+            .navbar-toggler {
+                margin-top: -105px !important;
+                /* Move it down slightly */
+                margin-right: 10px !important;
+                /* Add right margin if needed */
+                padding: 4px 6px !important;
+                /* Make it a bit smaller */
+                font-size: 1rem;
+            }
+
+            .navbar-toggler .toggler-icon {
+                background-color: #000;
+                height: 2px;
+                width: 20px;
+                margin: 4px 0;
+                display: block;
+            }
+        }
+
+        /* Plans Section Styling */
+        .plans-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 0;
+        }
+
+        .single-plan-grid {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .single-plan-grid:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border: 2px solid #4a90e2;
+        }
+
+        .plan-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .plan-content h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .plan-content p {
+            font-size: 1rem;
+            color: #34495e;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .plan-content p strong {
+            color: #2c3e50;
+        }
+
+        .plan-content .button .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #4a90e2, #50c9c3);
+            color: #fff;
+            border-radius: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .plan-content .button .btn:hover {
+            background: linear-gradient(90deg, #50c9c3, #4a90e2);
+            transform: scale(1.05);
+        }
+
+        /* Blog Section Styling */
+        .blog-section {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .single-blog-grid {
+            background: #f9fafc;
+            border-radius: 12px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .single-blog-grid:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+            border: 1px solid #4a90e2;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content .meta-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .blog-content .meta-info a {
+            color: #7f8c8d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-content .meta-info a:hover {
+            color: #4a90e2;
+        }
+
+        .blog-content h4 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .blog-content h4 a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-content h4 a:hover {
+            color: #4a90e2;
+        }
+
+        .blog-content p {
+            font-size: 0.95rem;
+            color: #34495e;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .blog-content .button .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, #4a90e2, #50c9c3);
+            color: #fff;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .blog-content .button .btn:hover {
+            background: linear-gradient(90deg, #50c9c3, #4a90e2);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            .single-plan-grid,
+            .single-blog-grid {
+                margin-bottom: 20px;
+            }
+
+            .plan-content h4,
+            .blog-content h4 {
+                font-size: 1.2rem;
+            }
+
+            .plan-content p,
+            .blog-content p {
+                font-size: 0.9rem;
+            }
+
+            .plan-content .button .btn,
+            .blog-content .button .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = '3babdc36afd315acca119c94ed37be97cccd4fc6';
+        window.smartsupp || (function (d) {
+            var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
+            s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
+            c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/images/logo/lg1.png" alt="Brineex logo">
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" class="active" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="about-us.html" aria-label="Toggle navigation">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="plan.html" aria-label="Toggle navigation">Plan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="service.html" aria-label="Toggle navigation">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="button">
+                                <a href="/account/login" class="btn">Get started</a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+
+
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Our Services</h1>
+                        <ul class="breadcrumb-nav">
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li>Our Services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Services Area -->
+    <section class="about section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div class="image wow fadeInUp" data-wow-delay=".4s">
+                        <img src="assets/images/about/about-image.png" alt="Brineex Services">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="content wow fadeInUp" data-wow-delay=".7s">
+                        <h4>COMPREHENSIVE CRYPTO SOLUTIONS</h4>
+                        <h2>Tailored Services for Your Digital Asset Success</h2>
+                        <p>At Brineex, we offer a complete suite of cryptocurrency services designed to help both
+                            individuals and institutions navigate the digital economy. Our platform combines
+                            institutional-grade security with intuitive tools to maximize your crypto potential.</p>
+                        <div class="list">
+                            <div class="single-list">
+                                <div class="list-icon">
+                                    <i class="lni lni-checkmark"></i>
+                                </div>
+                                <h4>Secure Asset Management</h4>
+                                <p>Enterprise-level protection for your digital assets with multi-signature wallets</p>
+                            </div>
+                            <div class="single-list">
+                                <div class="list-icon">
+                                    <i class="lni lni-checkmark"></i>
+                                </div>
+                                <h4>Diversified Investment Strategies</h4>
+                                <p>Custom portfolios aligned with your risk tolerance and financial goals</p>
+                            </div>
+                            <div class="single-list">
+                                <div class="list-icon">
+                                    <i class="lni lni-checkmark"></i>
+                                </div>
+                                <h4>Yield Optimization Services</h4>
+                                <p>Automated staking and liquidity mining to grow your holdings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Area -->
+
+    <!-- Start Our Process Area -->
+    <section class="start-process dark section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Streamlined Onboarding</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">How Our Service Works</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">We've simplified the process to get you started
+                            with
+                            professional crypto management in just three steps.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="single-process">
+                        <span class="serial">01</span>
+                        <h3>Personal Consultation</h3>
+                        <p>Begin with a free assessment where we analyze your financial objectives and recommend the
+                            ideal
+                            service package.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="single-process">
+                        <span class="serial">02</span>
+                        <h3>Custom Strategy Development</h3>
+                        <p>Our experts craft a personalized investment approach tailored to your specific needs and
+                            market
+                            conditions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="single-process">
+                        <span class="serial">03</span>
+                        <h3>Ongoing Portfolio Management</h3>
+                        <p>We actively monitor and adjust your investments while providing regular performance reports.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Our Process Area -->
+
+    <!-- Start Service Features Area -->
+    <section class="testimonials style2 section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Core Features</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Why Choose Our Services</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">We differentiate ourselves through innovative
+                            technology and exceptional service delivery.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="service-feature">
+                        <div class="feature-icon">
+                            <i class="lni lni-shield"></i>
+                        </div>
+                        <h3>Institutional Security</h3>
+                        <p>Cold storage solutions with insurance coverage and SOC 2 Type II certified infrastructure</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="service-feature">
+                        <div class="feature-icon">
+                            <i class="lni lni-graph"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Real-time portfolio tracking with predictive market insights and tax optimization tools</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="service-feature">
+                        <div class="feature-icon">
+                            <i class="lni lni-users"></i>
+                        </div>
+                        <h3>Dedicated Support</h3>
+                        <p>24/7 access to our team of crypto specialists and financial advisors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Service Features Area -->
+
+    <!-- Start Pricing Area -->
+    <section class="team section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Transparent Pricing</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Service Tiers</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Choose the level of service that matches your
+                            investment needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Essential</h3>
+                            <h4>$99<span>/month</span></h4>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Basic portfolio management</li>
+                            <li>Up to 5 asset holdings</li>
+                            <li>Monthly performance reports</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#" class="btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Professional</h3>
+                            <h4>$299<span>/month</span></h4>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Advanced strategy implementation</li>
+                            <li>Up to 15 asset holdings</li>
+                            <li>Weekly performance reports</li>
+                            <li>Priority phone support</li>
+                        </ul>
+                        <a href="#" class="btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Institutional</h3>
+                            <h4>Custom Pricing</h4>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Custom investment solutions</li>
+                            <li>Unlimited asset holdings</li>
+                            <li>Real-time reporting dashboard</li>
+                            <li>Dedicated account manager</li>
+                        </ul>
+                        <a href="#" class="btn">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Pricing Area -->
+
+    <!-- Start CTA Area -->
+    <section class="cta section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-8 col-12">
+                    <div class="cta-content">
+                        <h2>Ready to Elevate Your Crypto Strategy?</h2>
+                        <p>Schedule a free consultation with one of our digital asset specialists today.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12 text-end">
+                    <a href="{{ route('contact') }}" class="btn btn-alt">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End CTA Area -->
+
+
+    <!-- Start Footer Area -->
+    <footer class="footer section">
+        <!-- Start Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-about">
+                                <div class="logo">
+                                    <a class="navbar-brand" href="index.html">
+                                        <img src="assets/images/logo/lg1.png" alt="Brineex logo">
+                                    </a>
+                                </div>
+                                <p>Brineex provides secure and innovative digital asset investment solutions with
+                                    transparency and professional management.</p>
+                                <h4 class="social-title">Connect With Us:</h4>
+
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-12">
+                            <!-- Single Widget -->
+
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-link">
+                                <ul>
+                                    <li><a href="index.html" class="active" aria-label="Toggle navigation">Home</a></li>
+                                    <li><a href="about-us.html" aria-label="Toggle navigation">About</a></li>
+                                    <li><a href="plan.html" aria-label="Toggle navigation">Plan</a></li>
+                                    <li><a href="service.html" aria-label="Toggle navigation">Service</a></li>
+                                    <li><a href="contact.html" aria-label="Toggle navigation">Contact</a></li>
+                                </ul>
+
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer newsletter">
+                                <h3>Newsletter</h3>
+                                <p>Subscribe to receive market insights and investment updates</p>
+                                <form action="#" method="get" target="_blank" class="newsletter-form">
+                                    <input name="EMAIL" placeholder="Email address" required="required" type="email">
+                                    <div class="button">
+                                        <button class="sub-btn" aria-label="Subscribe"><i class="lni lni-envelope"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Top -->
+        <!-- Start Copyright Area -->
+        <div class="copyright-area">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <p class="copyright-text">© 2013 Brineex - All Rights Reserved</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <p class="copyright-owner">Designed and Developed by <a href="https://uideck.com/"
+                                    rel="nofollow" target="_blank">UIdeck</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright Area -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top" aria-label="Scroll to top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        //========= Road Map 
+        tns({
+            container: '.road-map-slider',
+            items: 1,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 2,
+                },
+                540: {
+                    items: 3,
+                },
+                768: {
+                    items: 4,
+                },
+                992: {
+                    items: 4,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+
+        //========= testimonial 
+        tns({
+            container: '.testimonial-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2,
+                },
+                1170: {
+                    items: 3,
+                }
+            }
+        });
+
+        //====== counter up 
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw',
+            'type': 'video',
+            'source': 'youtube',
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+    </script>
+
+
+</body>
+
+</html>
