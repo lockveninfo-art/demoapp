@@ -1,7 +1,6 @@
 [build]
-  publish = "."
+  publish = "build"
 
-# Your SPA routes
 [[redirects]]
   from = "/account/*"
   to = "/account/index.html"
