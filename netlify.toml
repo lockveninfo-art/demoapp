@@ -1,6 +1,7 @@
-  [build]
+[build]
   publish = "build"
-
+  command = "npm run build"
+  
 [[redirects]]
   from = "/account/*"
   to = "/account/index.html"
